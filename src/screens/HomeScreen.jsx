@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import logoNaranja from '../assets/logomcnnaranja.png';
 
 export default function HomeScreen() {
   const navigate = useNavigate();
@@ -17,11 +18,7 @@ export default function HomeScreen() {
       justifyContent: 'center',
       alignItems: 'center'
     }}>
-      <img
-        src="/logomcnnaranja.png"
-        alt="Logo MCN"
-        style={{ width: 200, marginBottom: 20 }}
-      />
+      <img src={logoNaranja} alt="Logo MCN" style={{ width: 200, marginBottom: 20 }} />
       <button
         className="boton-naranja"
         onClick={() => navigate('/camara')}
