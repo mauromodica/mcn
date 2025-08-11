@@ -405,7 +405,7 @@ export default function MCNDiputadosScreen() {
 
     // Abrir una nueva ventana si aún no existe
     localStorage.setItem('camara', 'diputados');
-    const nuevaVentana = window.open('/transmision', 'transmisionVotacion', 'width=1000,height=700');
+    const nuevaVentana = window.open('/#/transmision', 'transmisionVotacion', 'width=1000,height=700');
     if (nuevaVentana) {
       setVentanaTransmision(nuevaVentana);
     }

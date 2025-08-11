@@ -379,7 +379,7 @@ export default function MCNSenadoresScreen() {
     }
 
     localStorage.setItem('camara', 'senadores');
-    const nuevaVentana = window.open('/transmision', 'transmisionVotacion', 'width=1000,height=700');
+    const nuevaVentana = window.open('/#/transmision', 'transmisionVotacion', 'width=1000,height=700');
     if (nuevaVentana) {
       setVentanaTransmision(nuevaVentana);
     }

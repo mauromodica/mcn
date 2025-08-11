@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logoNaranja from '../assets/logomcnnaranja.png';
 
+console.log('Logo importado:', logoNaranja);  // <--- aquí
+
 export default function HomeScreen() {
   const navigate = useNavigate();
 
