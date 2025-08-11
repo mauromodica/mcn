@@ -1,3 +1,7 @@
+# Modelo de Congreso de la Nación. App
+
+Esta es una app para la presidencia del Modelo de Congreso de la Nación de OAJNU.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
