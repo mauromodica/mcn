@@ -1,0 +1,388 @@
+/* PanelVotaciones.css */
+
+.panel-container {
+  font-family: 'Nunito', sans-serif;
+  width: 100%;
+}
+
+/* Selector de modo: mantiene 50% cada botón, sin cambios */
+.modo-selector {
+  display: flex;
+  height: 50px;
+  margin-bottom: 0;
+}
+
+.modo-boton {
+  flex: 1;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 0;
+  display: flex;
+  align-items: center;       /* centrar vertical */
+  justify-content: center;   /* centrar horizontal */
+  height: 50px;              /* tu nuevo alto */
+  user-select: none;
+  padding: 0;                /* sin padding para que no empuje */
+  line-height: normal;       /* para que no desplace */
+}
+
+/* Panel acciones: horizontal, todos en la misma línea, mismo alto */
+.panel-acciones {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  flex-wrap: nowrap;
+  overflow-x: auto; /* Para pantallas chicas, scroll horizontal */
+  padding: 0 0.5rem;
+}
+
+/* Botones panel: naranja, texto blanco, sin bordes redondeados, mismo tamaño */
+.boton-panel {
+  background-color: #E05206;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 12px 20px;
+  border-radius: 0; /* Sin bordes redondeados */
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px; /* Misma altura para todos */
+  user-select: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.boton-panel:hover {
+  background-color: #b04004;
+}
+
+.boton-panel:active {
+  background-color: #f57c00;
+  transform: translateY(2px);
+}
+
+.boton-panel.activo {
+  box-shadow: inset 0 0 6px 2px rgba(255, 255, 255, 0.3);
+}
+
+.boton-panel.naranja {
+  background-color: #E05206;
+  color: white;
+  border-radius: 0 !important;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.boton-panel.naranja:hover {
+  background-color: #b04004;
+}
+
+.boton-panel.naranja:active {
+  background-color: #f57c00;
+  transform: translateY(2px);
+}
+
+/* Botones para afirmativo/negativo con color activo (opcional si querés) */
+/* Pero todos quedan naranja para unificación según tu pedido */
+
+/* Contador columna vertical, 3 líneas, texto más grueso */
+.contador-columna {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  padding: 0;
+  box-sizing: border-box;
+
+  user-select: none;
+}
+
+.contador-bloque {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  font-size: 2.5rem;
+  border-radius: 0; /* sin bordes redondeados */
+  user-select: none;
+}
+
+/* Colores específicos de cada bloque */
+.contador-afirmativo {
+  background-color: #34a853; /* verde */
+  color: white;
+}
+
+.contador-negativo {
+  background-color: #ff0000; /* rojo */
+  color: white;
+}
+
+.contador-abstencion {
+  background-color: #ffd600; /* amarillo */
+  color: black;
+}
+
+.contador-linea {
+  margin: 3px 0;
+}
+
+.verde {
+  color: #34a853;
+}
+
+.rojo {
+  color: #ff0000;
+}
+
+.amarillo {
+  color: #ffd600;
+}
+
+/* Grupos de botones en el modo contador (sub-bloques) */
+.grupo-botones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+/* Para que el scroll horizontal no muestre scrollbar visible (opcional) */
+.panel-acciones::-webkit-scrollbar {
+  height: 6px;
+}
+
+.panel-acciones::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.panel-acciones::-webkit-scrollbar-thumb {
+  background-color: #E05206;
+  border-radius: 10px;
+}
+
+/* Contenedor general para panel por ubicación */
+.panel-ubicacion {
+  display: flex;
+  width: 100%;
+  height: 100px; /* ejemplo */
+  gap: 0;
+  user-select: none;
+  margin-top: 0; /* para quitar espacio arriba */
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background-color: white;
+}
+
+/* Contenedor para botones afirmativo y negativo apilados */
+.bloque-votos {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+}
+
+/* Botones afirmativo/negativo */
+.boton-voto-ubicacion {
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Color naranja para seleccionado */
+.boton-voto-ubicacion.seleccionado {
+  background-color: var(--naranja);
+}
+
+/* Color gris para no seleccionado */
+.boton-voto-ubicacion.no-seleccionado {
+  background-color: #999;
+}
+
+.boton-voto-ubicacion:hover {
+  filter: brightness(0.85);
+}
+
+.boton-voto-ubicacion:active {
+  filter: brightness(1.15);
+  transform: translateY(2px);
+}
+
+/* Selector mayoría */
+.boton-mayoria {
+  width: 15%;
+  border: none;
+  cursor: pointer;
+  background-color: #999; /* gris por defecto */
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0;
+  user-select: none;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 1.1;
+}
+
+/* Cambiar background si querés cuando está activo */
+.boton-mayoria.activo {
+  background-color: var(--naranja);
+}
+
+/* Texto arriba "MAYORÍA" */
+.boton-mayoria .linea-superior {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Texto abajo "SIMPLE" o "ABSOLUTA" */
+.boton-mayoria .linea-inferior {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* 2. Hover y active para botón mayoría */
+.boton-mayoria:hover {
+  background-color: #b04004;
+}
+
+.boton-mayoria:active {
+  background-color: #f57c00;
+  transform: translateY(2px);
+}
+
+
+/* Contador (25%) */
+.contador-votos-ubicacion {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 1rem;
+  font-weight: 800;
+  font-size: 1.2rem;
+  user-select: none;
+}
+
+/* Colores en el contador */
+.contador-verde {
+  color: var(--verde);
+}
+
+.contador-rojo {
+  color: var(--rojo);
+}
+
+.contador-amarillo {
+  color: var(--amarillo);
+}
+
+/* Botones finales (finalizar, reiniciar, transmitir) */
+.bloque-finales {
+  width: 45%; /* 3 botones de 15% cada uno */
+  display: flex;
+  gap: 0;
+}
+
+.boton-final {
+  flex: 1;
+  background-color: var(--naranja);
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  border-radius: 0;
+  transition: background-color 0.2s ease;
+}
+
+.boton-final:hover {
+  background-color: #b04004;
+}
+
+.boton-final:active {
+  background-color: #f57c00;
+  transform: translateY(2px);
+}
+
+.boton-afirmativo {
+  background-color: #34a853; /* verde */
+  color: white;
+  border-radius: 0;
+  font-weight: bold;
+  font-size: 0.9rem;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  border: none;
+  white-space: nowrap;
+  padding: 0 20px;
+}
+
+.boton-afirmativo:hover {
+  background-color: #2a863f; /* verde más oscuro */
+}
+
+.boton-afirmativo:active {
+  background-color: #46bf5a; /* verde más claro */
+  transform: translateY(2px);
+}
+
+.boton-negativo {
+  background-color: #ff0000; /* rojo */
+  color: white;
+  border-radius: 0;
+  font-weight: bold;
+  font-size: 0.9rem;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  border: none;
+  white-space: nowrap;
+  padding: 0 20px;
+}
+
+.boton-negativo:hover {
+  background-color: #960000; /* rojo más oscuro */
+}
+
+.boton-negativo:active {
+  background-color: #ff3333; /* rojo más claro */
+  transform: translateY(2px);
+}

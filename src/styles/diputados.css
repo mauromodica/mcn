@@ -1,0 +1,117 @@
+.pantalla-diputados {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f7f7f7;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Banner */
+.banner-naranja {
+  background-color: #E05206;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo-mcn {
+  height: 50px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.titulo-camara {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+/* Menú horizontal */
+.menu-horizontal {
+  display: flex;
+  background-color: #E05206;
+}
+
+.boton-menu {
+  flex: 1;
+  padding: 15px 0;
+  color: white;
+  background-color: #E05206;
+  border: none;
+  border-right: 2px solid white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.boton-menu:last-child {
+  border-right: none;
+}
+
+.boton-menu:active {
+  background-color: #f27c3c;
+  transform: scale(0.97);
+}
+
+.activo {
+  background-color: #E05206;
+}
+
+/* Contenido */
+.contenido-principal {
+  flex: 1;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Mapa de diputados */
+.mapa-diputados {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.panel-diputados {
+  position: fixed; 
+  top: 96px; /* justo debajo del menú */
+  left: 0;
+  width: 100%;
+  max-width: 1366px;
+  height: 105px;
+  padding: 0 1rem 1rem 1rem;
+  background-color: white;
+  box-sizing: border-box;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 2px 6px rgba(224, 82, 6, 0.4);
+  font-family: 'Nunito', sans-serif;
+  transition: transform 0.4s ease-in-out;
+  overflow: hidden;
+  z-index: 5;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.panel-diputados.abierto {
+  max-height: 200px; /* ajustá según necesidad */
+  margin-top: 8px;
+}
+
+/* Panel visible, desliza hacia abajo */
+.panel-abierto {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Panel oculto, desliza hacia arriba */
+.panel-cerrado {
+  transform: translateY(-120%);
+  opacity: 0;
+  pointer-events: none;
+}
+

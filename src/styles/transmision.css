@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+.transmision-container {
+  font-family: 'Nunito', sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  overflow: hidden;
+}
+
+.transmision-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: white;
+}
+
+.logo-transmision {
+  height: 40px;
+  margin-right: 12px;
+}
+
+.titulo-transmision {
+  color: #E05206;
+  font-size: 34px;
+  font-weight: 1000;
+  margin: 0;
+}
+
+.contador-transmision {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor en modo contador, ocupa toda la altura menos header */
+.contador-transmision.contador-contador {
+  flex-direction: column;
+  height: calc(100vh - /* altura header */ 64px); /* ajustar si el header cambia */
+}
+
+/* Diputados presentes: ocupa 20% de altura, ancho 100% */
+.contador-transmision.contador-contador > .bloque.presente {
+  height: 20%;
+  width: 100%;
+  font-size: 5rem;
+  font-weight: 800;
+  border-right: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor para afirmativos y negativos: ocupa 60% de alto, 100% ancho, con 2 bloques al 50% ancho */
+.contador-transmision.contador-contador > .bloques-50 {
+  display: flex;
+  width: 100%;
+  height: 40%;
+}
+
+/* Bloques afirmativo y negativo: 50% ancho, alto completo, letra muy grande */
+.contador-transmision.contador-contador > .bloques-50 > .bloque {
+  width: 50%;
+  height: 100%;
+  font-size: 4rem;
+  font-weight: 900;
+  border-right: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Resultado ocupa 20% altura, ancho 100%, texto grande */
+.contador-transmision.contador-contador > .bloque.resultado {
+  height: 30%;
+  width: 100%;
+  font-size: 3rem;
+  font-weight: 900;
+  border-right: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Solo en modo contador, aumentar tamaño de título y número en todos los bloques */
+.contador-transmision.contador-contador .bloque .titulo {
+  font-size: 2.5rem;  /* o el tamaño que quieras */
+  font-weight: 700; /* opcional: hacer más grueso */
+}
+
+.contador-transmision.contador-contador .bloque .numero {
+  font-size: 4.5rem;  /* mucho más grande */
+  font-weight: 900;
+}
+
+
+.mapa-wrapper {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 10px;  /* margen lateral garantizado */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.mapa {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  gap: 4px;
+
+  aspect-ratio: 12 / 8;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+.celda-transmision {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #ecf0f1;
+}
+
+.celda-transmision.verde {
+  background-color: #34a853;
+}
+
+.celda-transmision.rojo {
+  background-color: #ff0000;
+}
+
+.celda-transmision.gris {
+  background-color: #ccc;
+}
+
+.celda-transmision.gris-presente {
+  background-color: #b0b0b0; /* gris medio para diputados presentes sin voto */
+}
+
+.celda-transmision.gris-vacio {
+  background-color: #e0e0e0; /* gris más claro para celdas vacías */
+}
+
+.bloque {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid white;
+  color: black;
+}
+
+.bloque:last-child {
+  border-right: none;
+}
+
+.bloque .titulo {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.bloque .numero {
+  font-size: 1.6rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Colores de texto */
+.bloque.verde {
+  color: #34a853;
+  background-color: #e8f5e9;
+}
+
+.bloque.rojo {
+  color: #ff0000;
+  background-color: #fdecea;
+}
+
+/* RESULTADO dinámico */
+.bloque.resultado {
+  color: white;
+  background-color: #b0b0b0;
+}
+
+.bloque.resultado.aprobado {
+  background-color: #34a853;
+}
+
+.bloque.resultado.rechazado {
+  background-color: #ff0000;
+}
+
+.bloque.resultado.empate {
+  background-color: #ffd600;
+  color: black;
+}
+
+.bloque.resultado .titulo {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.bloque.resultado .numero {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 0;
+  min-height: 1.6rem; /* fuerza que siempre haya lugar para el contenido debajo del título */
+}
+
+.bloque.cian {
+  background-color: #009aa6;
+  color: white;
+}

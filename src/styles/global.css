@@ -1,0 +1,491 @@
+/* global.css */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+button {
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  user-select: none;
+  transition: transform 0.1s ease, background-color 0.2s ease;
+  border-radius: var(--borde-radio);
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding: 15px 30px;
+  display: inline-block;
+}
+
+/* Variables de color */
+:root {
+  --naranja: #E05206;
+  --cian: #009AA6;
+  --rojo: #ff0000;
+  --verde: #34a853;
+  --azul: #0000ff;
+  --amarillo: #ffd600;
+  --blanco-bloque: #ecf0f1;
+  --borde-radio: 12px;
+}
+
+/* Clase base para todos los botones */
+.boton {
+  color: white; /* texto blanco por defecto para todos los botones */
+  cursor: pointer;
+  user-select: none;
+  border-radius: var(--borde-radio);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding: 15px 30px;
+  transition: transform 0.1s ease, background-color 0.2s ease;
+  border: none;
+  display: inline-block;
+  outline: none;
+}
+
+.boton-pequeno {
+  font-size: 1.1rem;
+  padding: 10px 20px;
+}
+
+.boton-naranja {
+  background-color: #E05206;
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.05s ease;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.boton-naranja:hover {
+  background-color: #b04004;
+}
+
+.boton-naranja:active {
+  background-color: #f57c00;
+  transform: translateY(2px);
+}
+
+.boton-seleccion-camara {
+  flex: 1;
+  font-size: 2.5rem;
+  height: 100%;
+  border-radius: 0;
+}
+
+.borde-derecho {
+  border-right: 2px solid white;
+}
+
+.boton-cian {
+  background-color: #009AA6;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 2rem;
+  user-select: none;
+}
+
+.boton-cian:hover {
+  background-color: #007a85;
+}
+
+.boton-cian:active {
+  background-color: #00b0bc;
+}
+
+/* Scroll y otros estilos que ya tenías */
+
+.panel-scroll::-webkit-scrollbar {
+  width: 3px;
+}
+
+.panel-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.panel-scroll::-webkit-scrollbar-thumb {
+  background-color: #E05206;
+  border-radius: 10px;
+}
+
+/* Scroll horizontal muy fino y naranja */
+.panel-scroll-horizontal::-webkit-scrollbar {
+  height: 3px;
+}
+
+.panel-scroll-horizontal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.panel-scroll-horizontal::-webkit-scrollbar-thumb {
+  background-color: #009AA6;
+  border-radius: 10px;
+}
+
+/* Firefox */
+.panel-scroll-horizontal {
+  scrollbar-width: thin;
+  scrollbar-color: #009aa6 transparent;
+}
+
+.contenedor-mapa {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0.5rem;
+  user-select: none;
+}
+
+.celda-mapa {
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  height: 80px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.menu-horizontal {
+  display: flex;
+  background-color: #E05206;
+  border-bottom: 1px solid white;
+}
+
+.menu-boton {
+  flex: 1;
+  padding: 1rem;
+  background-color: #E05206;
+  color: white;
+  border: none;
+  border-right: 1px solid white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Nunito', sans-serif;
+}
+
+.menu-boton:last-child {
+  border-right: none;
+}
+
+.menu-boton.activo {
+  background-color: #009AA6;
+}
+
+.boton-verde {
+  background-color: #28a745;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.boton-verde:hover {
+  background-color: #218838;
+}
+
+.boton-verde:active {
+  background-color: #1e7e34;
+}
+
+.boton-rojo {
+  background-color: #dc3545;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.boton-rojo:hover {
+  background-color: #c82333;
+}
+
+.boton-rojo:active {
+  background-color: #bd2130;
+}
+
+.boton-voto {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  height: 110px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: pre-line;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  border-radius: 0; /* SIN borde redondeado */
+}
+
+.panel-votaciones {
+  background-color: #fff;
+  border-radius: var(--borde-radio);
+  padding: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+.votacion-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.votacion-tabs .boton {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.3rem;
+  background-color: var(--naranja);
+  color: white;
+  border-radius: var(--borde-radio);
+}
+
+.votacion-tabs .boton.activo {
+  background-color: var(--cian);
+}
+
+.botones-votacion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.botones-votacion .boton-voto {
+  width: 140px;
+  height: 90px;
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  white-space: pre-line;
+  text-align: center;
+}
+
+.contadores-voto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.contador-positivo {
+  color: var(--verde);
+}
+
+.contador-negativo {
+  color: var(--rojo);
+}
+
+.contador-abstencion {
+  color: var(--amarillo);
+}
+
+.boton-reiniciar {
+  background-color: #999;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: var(--borde-radio);
+  font-size: 1rem;
+}
+
+.boton-reiniciar:hover {
+  background-color: #777;
+}
+
+.boton-finalizar {
+  background-color: #444;
+  color: white;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--borde-radio);
+  white-space: pre-line;
+  text-align: center;
+}
+
+.boton-finalizar:hover {
+  background-color: #222;
+}
+
+.modo-votacion {
+  display: flex;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.modo-btn {
+  flex: 1;
+  height: 50px;
+  border: none;
+  font-weight: bold;
+  color: white;
+  background-color: #e05206;
+}
+
+.modo-btn.activo {
+  background-color: #009aa6;
+}
+
+.selector-mayoria {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.bloque-ubicacion,
+.bloque-contador {
+  width: 100%;
+}
+
+.botones-voto {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.btn-afirmativo {
+  background-color: #34a853;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.btn-negativo {
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.contador-votos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contador-votos.ancho {
+  flex: 1;
+  max-width: 200px;
+}
+
+.linea-voto {
+  font-weight: bold;
+  margin: 4px 0;
+}
+
+.verde {
+  color: #34a853;
+}
+
+.rojo {
+  color: #ff0000;
+}
+
+.amarillo {
+  color: #ffd600;
+}
+
+.botones-finales {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.btn-naranja {
+  background-color: #e05206;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.botones-contador {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.controles-contador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.boton-menu {
+  border-radius: 0;
+  background-color: #E05206;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  padding: 1rem;
+  flex: 1;
+}
+
+/* Oscurecer fondo */
+.boton-menu:hover {
+  background-color: #c74604; /* naranja un poco más oscuro */
+}
+
+.boton-menu.activo {
+  background-color: #009AA6; /* cian exacto, sin aclarar */
+}
+
+/* Oscurecer el cian cuando está activo y hover */
+.boton-menu.activo:hover {
+  background-color: #00848e; /* cian más oscuro */
+}
