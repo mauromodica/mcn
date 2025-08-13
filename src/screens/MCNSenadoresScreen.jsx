@@ -87,8 +87,9 @@ export default function MCNSenadoresScreen() {
   }, [ubicaciones]);
 
   useEffect(() => {
-    localStorage.setItem('mapaSenadores', JSON.stringify(ubicaciones));
+    localStorage.setItem('ubicacionesSenadores', JSON.stringify(ubicaciones));
   }, [ubicaciones]);
+
 
   useEffect(() => {
     const handleKeyDown = (e) => {
