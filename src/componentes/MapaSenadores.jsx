@@ -68,7 +68,7 @@ export default function MapaSenadores({
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(12, 95px)',
-          gridTemplateRows: 'repeat(4, 70px)',
+          gridTemplateRows: 'repeat(6, 70px)',
           gap: '8px',
           justifyContent: 'center',
           paddingTop: '1rem',
