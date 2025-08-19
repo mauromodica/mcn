@@ -23,7 +23,7 @@ const posiblesClaveVotos = [
 
 export default function TransmisionVotacion() {
   const camara = (localStorage.getItem('camara') || 'diputados').toLowerCase();
-  const filas = camara === 'senadores' ? 4 : 8;
+  const filas = camara === 'senadores' ? 6 : 8;
   const textoPresentes = camara === 'senadores' ? 'SENADORES PRESENTES' : 'DIPUTADOS PRESENTES';
   const cols = 12;
 
