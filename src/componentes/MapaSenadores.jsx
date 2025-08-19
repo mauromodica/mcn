@@ -12,7 +12,7 @@ export default function MapaSenadores({
   votos = {},
   toggleVoto,
 }) {
-  const filas = 4;
+  const filas = 6;
   const columnas = 12;
 
   const senadoresPorCelda = {};
