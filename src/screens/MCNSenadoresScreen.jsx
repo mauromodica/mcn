@@ -458,7 +458,7 @@ export default function MCNSenadoresScreen() {
             onClick={() => navigate('/')}
           />
           <h1 style={{ color: 'white', marginLeft: '1rem', fontSize: '1.8rem' }}>
-            CÁMARAS DE SENADORES
+            HONORABLE CÁMARA DE SENADORES
           </h1>
         </div>
 
