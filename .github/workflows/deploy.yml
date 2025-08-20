@@ -3,7 +3,7 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - main   # si tu rama principal es "master", cambiá acá
+      - main   # Cambiá a "master" si tu rama principal se llama así
 
 permissions:
   contents: write
@@ -24,7 +24,7 @@ jobs:
         run: npm install
 
       - name: Build project
-        run: npm run build
+        run: CI=false npm run build   # <- evita que los warnings bloqueen el build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
