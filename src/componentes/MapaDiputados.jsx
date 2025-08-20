@@ -69,7 +69,7 @@ export default function MapaDiputados({
         className="mapa-diputados"
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(12, 95px)',
+          gridTemplateColumns: 'repeat(16, 95px)',
           gridTemplateRows: 'repeat(8, 70px)',
           gap: '8px',
           justifyContent: 'center',
