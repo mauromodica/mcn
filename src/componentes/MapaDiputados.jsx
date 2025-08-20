@@ -13,7 +13,7 @@ export default function MapaDiputados({
   toggleVoto,
 }) {
   const filas = 8;
-  const columnas = 12;
+  const columnas = 16;
 
   // Construir un mapa de celdaKey -> diputado según la estructura correcta de ubicaciones
   const diputadosPorCelda = {};
