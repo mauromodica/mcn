@@ -25,7 +25,7 @@ export default function TransmisionVotacion() {
   const camara = (localStorage.getItem('camara') || 'diputados').toLowerCase();
   const filas = camara === 'senadores' ? 6 : 8;
   const textoPresentes = camara === 'senadores' ? 'SENADORES PRESENTES' : 'DIPUTADOS PRESENTES';
-  const cols = 12;
+  const cols = 16;
 
   useEffect(() => {
       document.title = "MCN - Votación";
